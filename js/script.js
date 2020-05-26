@@ -1,37 +1,47 @@
-$( document ).ready(function() {
-    $(".ops").click(function(){
-       let result = $("#result").val();
+let ops = document.getElementsByClassName("ops");
+Array.from(ops).forEach(function(element) {
+  element.addEventListener('click', function(){
+       let result = document.querySelector("#result").value;
         if(result.slice(-1) != "+" && result.slice(-1) != "-" && result.slice(-1) != "*"&& result.slice(-1) != "/")
-        {$("#result").val($("#result").val()+$(this).html());       
+        {
+        document.querySelector("#result").value += this.innerText;     
     }
-});
+})});
 //dot
-$(".dot").click(function(){
-  let result = $("#result").val();
+document.querySelector(".dot").addEventListener("click",function(){
+  let result = document.querySelector("#result").value;
   let checkstr = result.slice(result.lastIndexOf("."),result.length);
   if(result.lastIndexOf(".")== -1||checkstr.includes("+")||checkstr.includes("-")||checkstr.includes("*")||checkstr.includes("/"))
    {
      
      if(result.slice(-1) != ".")
-   {$("#result").val($("#result").val()+$(this).html());       
+   {document.querySelector("#result").value += ".";    
 }
   }
 });
-$(".num").click(function(){
-  $("#result").val($("#result").val()+$(this).html());             
-     });
-     $("#equals").click(function(){
-     $("#result").val(eval($("#result").val()));
-     });
-     $(".clear").click(function(){
-        $("#result").val("");             
-      });
+
+let num = document.getElementsByClassName("num");
+Array.from(num).forEach(function(element) {
+  element.addEventListener('click', function(){
+    document.querySelector("#result").value += this.innerText;             
+       });
 });
+
+
+document.querySelector("#equals").addEventListener("click",function(){
+  document.querySelector("#result").value = eval(document.querySelector("#result").value);
+     });
+     
+     document.querySelector(".clear").addEventListener("click",function(){
+      document.querySelector("#result").value = "";           
+      });
+
 //sqrt
-$(".sqrt").click(function(){
-  $("#result").val(Math.sqrt($("#result").val()));
+document.querySelector(".sqrt").addEventListener("click",function(){
+
+  document.querySelector("#result").value = Math.sqrt(document.querySelector("#result").value);
 });
 //square
-$(".sq").click(function(){
-  $("#result").val(Math.pow($("#result").val(),2));
+document.querySelector(".sq").addEventListener("click",function(){
+  document.querySelector("#result").value = Math.pow(document.querySelector("#result").value,2);
 });
