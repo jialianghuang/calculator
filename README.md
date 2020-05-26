@@ -1,2 +1,2 @@
 # calculator
-html+css+jquery
+html+css+javascript
