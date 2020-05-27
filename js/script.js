@@ -45,3 +45,44 @@ document.querySelector(".sqrt").addEventListener("click",function(){
 document.querySelector(".sq").addEventListener("click",function(){
   document.querySelector("#result").value = Math.pow(document.querySelector("#result").value,2);
 });
+//keypress
+document.onkeypress = Key;
+function Key(e) {
+switch(e.code){
+  case "Digit1":
+    Enter(1);
+    break;
+  case "Digit2":
+    Enter(2);
+    break;
+  case "Digit3":
+    Enter(3);
+    break;
+  case "Digit4":
+    Enter(4);
+    break;
+  case "Digit5":
+    Enter(5);
+    break;
+  case "Digit6":
+    Enter(6);
+    break;
+  case "Digit7":
+    Enter(7);
+    break;
+  case "Digit8":
+    Enter(8);
+    break;
+  case "Digit9":
+    Enter(9);
+    break;
+  case "Digit0":
+    Enter(0);
+    break;
+  default:
+    break;
+}
+}
+function Enter(num){
+  document.querySelector("#result").value += num;     
+}
