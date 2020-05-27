@@ -1,6 +1,8 @@
+"use strict";
+
 let ops = document.getElementsByClassName("ops");
-Array.from(ops).forEach(function(element) {
-  element.addEventListener('click', function(){
+[...ops].forEach(function(el) {
+  el.addEventListener('click', function(){
        let result = document.querySelector("#result").value;
         if(result.slice(-1) != "+" && result.slice(-1) != "-" && result.slice(-1) != "*"&& result.slice(-1) != "/")
         {
@@ -21,8 +23,8 @@ document.querySelector(".dot").addEventListener("click",function(){
 });
 
 let num = document.getElementsByClassName("num");
-Array.from(num).forEach(function(element) {
-  element.addEventListener('click', function(){
+[...num].forEach(function(el) {
+  el.addEventListener('click', function(){
     document.querySelector("#result").value += this.innerText;             
        });
 });
