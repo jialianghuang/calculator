@@ -1,6 +1,7 @@
 .calculator {
 font-size: 28px;
 width: 10em;
+margin: 0 auto;
 }
 button {
 border: 0;
@@ -12,4 +13,13 @@ margin: 0.25em;
 width: 2em;
 height: 2em;
 transition: all 0.5s;
+}
+.result {
+border: 2px solid #cccccc;
+display: block;
+margin : 0 auto;
+position: relative;
+width:90%;
+font-size: 24px;
+margin-bottom: 10px;
 }
